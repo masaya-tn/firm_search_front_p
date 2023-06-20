@@ -6,8 +6,8 @@ import Link from "next/link";
 import Cookies from "js-cookie";
 import { useRouter } from 'next/navigation';
 
-export default function editFirmData({ params }) {
-  const url = `http://localhost:3000/firms/${params.id}`
+export default function EditFirmData({ params }) {
+  const url = `https://firm-search-api-49e394da150b.herokuapp.com/firms/${params.id}`
   const [firmData, setFirmData] = useState();
   const [salesData, setSalesData] = useState();
   const [profitsData, setProfitsData] = useState();
@@ -104,7 +104,7 @@ export default function editFirmData({ params }) {
     <>
       {isDataSet &&
         <>
-        <Link href="firms">企業検索画面へ</Link>
+        <Link href="firms" className="link">企業検索画面へ</Link>
         <form onSubmit={onSubmit}>
           <label>企業コード：</label>
           <input
